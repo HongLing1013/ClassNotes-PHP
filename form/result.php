@@ -14,7 +14,8 @@
         $bmi=$_GET['bmi'];
         echo "你的BMI為：".$bmi;
     ?>
-
+    <br>
+    <a href="bmi.html"><button>回到BMI計算</button></a>
     </h1>
 </body>
 </html>
