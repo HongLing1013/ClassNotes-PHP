@@ -18,4 +18,6 @@ echo "體重為：".$weight;
 $bmi=round($weight/(($height/100)*($height/100)),1);
 echo "<br>";
 echo "BMI值為：".$bmi;
+echo "<br>";
+
 ?>

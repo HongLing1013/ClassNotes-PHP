@@ -14,10 +14,11 @@
         $bmi=$_GET['bmi'];
         echo "你的BMI為：".$bmi;
         echo "<br>";
+        echo "判定結果為：".$_GET['result'];
     ?>
     <!-- 請根據BMI值,在結果頁上show出中文的BMI結果或建議 -->
     <?php
-    if($bmi>=35){
+    /*if($bmi>=35){
         echo "重度肥胖";
     }else if($bmi>=30&&$bmi<35){
         echo "中度肥胖";
@@ -29,7 +30,7 @@
         echo "健康";
     }else if($bmi<18.5){
         echo "過輕";
-    }
+    }*/
     ?>
 
 
