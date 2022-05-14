@@ -1,10 +1,10 @@
 <?php
-echo "POST陣列的內容：";
+/*echo "POST陣列的內容：";
 print_r($_POST);
 echo "<br>";
 echo "GET陣列的內容：";
 print_r($_GET);
-echo "<br>";
+echo "<br>";*/
 
 if (!empty($_GET) || !empty($_POST)) { //不管有沒有收到參數都要顯示頁面
     if (empty($_GET)) {
