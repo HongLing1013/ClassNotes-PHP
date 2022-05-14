@@ -1,4 +1,3 @@
-<!-- 運算 -->
 <?php
 echo "POST陣列的內容：";
 print_r($_POST);
@@ -7,7 +6,7 @@ echo "GET陣列的內容：";
 print_r($_GET);
 echo "<br>";
 
-if (!empty($_GET) || !empty($_POST)) {//不管有沒有收到參數都要顯示頁面
+if (!empty($_GET) || !empty($_POST)) { //不管有沒有收到參數都要顯示頁面
     if (empty($_GET)) {
         $height = $_POST['height'];
         $weight = $_POST['weight'];
@@ -48,30 +47,42 @@ if (!empty($_GET) || !empty($_POST)) {//不管有沒有收到參數都要顯示�
 </head>
 
 <body>
-    <h1>BMI計算</h1>
-    <!-- 直接傳值到當前這個頁面 不分頁工作 -->
-    <form action="bmi.php" method="post">
-        <div>
-            <label for="">身高(cm)：</label><input type="number" name="height" id="">
-        </div>
-        <div>
-            <label for="">體重(kg)：</label><input type="number" name="weight" id="">
-        </div>
-        <div>
-            <input type="submit" value="計算BMI">
-        </div>
-    </form>
-    <!-- 顯示結果 -->
-    <h1 style="font-size:3rem;text-align:center">
-    你的BMI值為：<?=$_GET['bmi'];?>
-    </h1>
-    <h2 style="text-align:center">判定結果為：<?=$_GET['result'];?></h2>
+    <?php
+    // 如果接收的值是空的 沒有接收到資料 就顯示表單
+    if (empty($_GET) && empty($_POST)) {
+        // 下方會被當成echo
+    ?>
 
-        <!-- 請根據BMI值,在結果頁上show出中文的BMI結果或建議 -->
-        
-        <div style="text-align:center;">
-            <a href="bmi.html"><button>回到BMI計算</button></a>
+        <h1>BMI計算</h1>
+        <!-- 直接傳值到當前這個頁面 不分頁工作 -->
+        <form action="bmi.php" method="get">
+            <div>
+                <label for="">身高(cm)：</label><input type="number" name="height" id="">
+            </div>
+            <div>
+                <label for="">體重(kg)：</label><input type="number" name="weight" id="">
+            </div>
+            <div>
+                <input type="submit" value="計算BMI">
+            </div>
+        </form>
+
+    <?php
+    } else { //上方php的中段
+    ?>
+        <!-- 顯示結果 -->
+        <h1 style="font-size:3rem;text-align:center">
+            你的BMI值為：<?= $bmi; ?>
+        </h1>
+        <h2 style="text-align:center">判定結果為：<?= $result; ?></h2>
+
+        <div style="text-align:center">
+            <a href="bmi.php"><button>回到BMI計算</button></a>
         </div>
+
+    <?php
+    } //echo的結尾
+    ?>
 </body>
 
 </html>
