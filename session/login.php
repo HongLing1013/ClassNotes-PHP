@@ -1,8 +1,8 @@
 <?php
-if(isset($_COOKIE['login'])){
+session_start();
+if(isset($_SESSION['login'])){
     header("location:memcenter.php");
 }
-
 ?>
 
 <!DOCTYPE html>

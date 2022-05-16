@@ -16,7 +16,8 @@ if($acc!=$default_user || $pw!=$default_pw){
     // 帳號密碼錯誤的話 將頁面帶回前端頁面
     header("location:login.php?error=$error");
 }else{
-    setcookie('login',$acc,time()+360);
+    session_start();
+    $_SESSION['login']=$acc;
     header("location:memcenter.php?user=$acc");
 }
 

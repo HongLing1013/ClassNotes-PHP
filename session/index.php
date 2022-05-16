@@ -15,7 +15,8 @@
                 <li>回首頁</li>
                 <li>產品目錄</li>
                     <?php
-                    if (empty($_COOKIE['login'])) {
+                    session_start();
+                    if (empty($_SESSION['login'])) {
                     ?>
                 <li><a href="login.php">登入</a></li>
                     <?php
