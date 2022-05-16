@@ -8,5 +8,7 @@
 </head>
 <body>
     <h1>歡迎<?=$_COOKIE['login'];?></h1>
+    <li><a href="index.php">回首頁</a></li>
+    <li><a href="logout.php">登出</a></li>
 </body>
 </html>
